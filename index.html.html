@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <img id="logoimg" src="images\logo.png" alt="logo" />
+        <img id="logotxt" src="images\logotext.png" alt="logotext" />
+        <i class="fa-solid fa-user"></i>
+
+        <button class="b login">LogIn</button>
+        <button class="b signup">SignUp</button>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="lb">
+        <ul class="a">
+          <!-- <li class="lbl" id="b"></li> -->
+          <li class="lbl" onclick="dashboard()">Dashboard</li>
+          <li class="lbl" onclick="sub()">Subjects</li>
+          <li class="lbl" onclick="quiz()">Quizzes</li>
+          <li class="lbl" onclick="df()">Discussion Forum</li>
+          <li class="lbl" onclick="pdfs()">PDF Summarizer</li>
+        </ul>
+      </div>
+      <div class="mainbox">
+        <div id="q1">
+          <div class="box" onclick="subjects('Maths')">Maths</div>
+          <div class="box" onclick="subjects('Physics')">Physics</div>
+          <div class="box" onclick="subjects('Chemistry')">Chemistry</div>
+          <div class="box" onclick="subjects('Biology')">Biology</div>
+          <div class="box" onclick="subjects('Social Science')">
+            Social Science
+          </div>
+          <div class="box" onclick="subjects('English')">English</div>
+          <div class="box" onclick="subjects('Hindi')">Hindi</div>
+          <div class="box" onclick="subjects('Sanskrit')">Sanskrit</div>
+          <div class="box" onclick="subjects('Computer')">Computer</div>
+        </div>
+        <div id="s1">
+          <i class="fa-solid fa-arrow-left" onclick="backq1()"></i>
+          <h1 class="subname">Maths</h1>
+          <div class="sub">
+            <div class="chap">
+              <div class="cnum">1</div>
+              Trignometry
+              <div class="ba">
+                <button class="basic" onclick="basic()">Basic</button
+                ><button class="Customised" onclick="Customised()">
+                  Customised
+                </button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">2</div>
+              B
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">3</div>
+              C
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">4</div>
+              D
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">5</div>
+              F
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">6</div>
+              H
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">7</div>
+              I
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">8</div>
+              J
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+            <div class="chap">
+              <div class="cnum">9</div>
+              K
+              <div class="ba">
+                <button class="basic">Basic</button>
+                <button class="Customised">Customised</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="b1">
+          <i class="fa-solid fa-arrow-left" onclick="backq1()"></i>
+          <h1 class="h1basic">Basic</h1>
+          <div class="b12">
+            <video src="" class="v v1"></video>
+            <video src="" class="v v2"></video>
+            <video src="" class="v v3"></video>
+          </div>
+        </div>
+        <div id="p1">
+          <i class="fa-solid fa-arrow-left" onclick="backq1()"></i>
+          <div class="p2">
+            <h1 id="h1pdf">PDF Summarizer</h1>
+
+            <!-- File Upload Section -->
+            <div class="inputbox">
+              <input type="file" name="file" id="file" accept=".pdf" />
+              <label for="file" class="upload-label">Upload PDF File</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="summarize" onclick="uploadPDF()">
+              Summarize PDF
+            </button>
+            <!-- Summary Display Section -->
+            <div class="summary">
+              <h3>Summary</h3>
+              <p id="summary-text">
+                The summarized text will appear here after uploading the PDF...
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- JavaScript for Uploading the PDF and Displaying the Summary -->
+        <script>
+          function uploadPDF() {
+            const fileInput = document.getElementById("file");
+            const file = fileInput.files[0];
+
+            if (!file) {
+              alert("Please upload a PDF file first.");
+              return;
+            }
+
+            const formData = new FormData();
+            formData.append("pdf", file);
+
+            fetch("http://127.0.0.1:5000/summarize", {
+              method: "POST",
+              body: formData,
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.error) {
+                  document.getElementById("summary-text").innerText =
+                    "Error: " + data.error;
+                } else {
+                  document.getElementById("summary-text").innerText =
+                    data.summary;
+                }
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                document.getElementById("summary-text").innerText =
+                  "An error occurred while summarizing the PDF.";
+              });
+          }
+        </script>
+
+        <!-- Example script for handling file upload -->
+        <script>
+          document
+            .getElementById("file")
+            .addEventListener("change", function (event) {
+              const file = event.target.files[0];
+              if (file) {
+                // Handle the PDF upload here (e.g., send it to the backend for processing)
+                console.log("PDF file uploaded:", file.name);
+                // Optionally, update the summary text here
+                document.getElementById("summary-text").innerText =
+                  "Summary is being generated...";
+              }
+            });
+        </script>
+
+        <div id="d1">
+          <i class="fa-solid fa-arrow-left" onclick="backq1()"></i>
+          <h1 class="h1basic">Dashboard</h1>
+          <div class="d12"></div>
+        </div>
+        <div class="bomspace">
+          <div class="bom">
+            <div class="bomfill" id="borefill"></div>
+          </div>
+          <div id="notification"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="home.js"></script>
+  </body>
+</html>

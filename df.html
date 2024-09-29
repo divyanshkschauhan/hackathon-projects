@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Basic styles for discussion forum */
+      #discussion-forum {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      #message-input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .message {
+        border-bottom: 1px solid #eee;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <ul>
+        <img id="logoimg" src="images/logo.png" alt="logo" />
+        <img id="logotxt" src="images/logotext.png" alt="logotext" />
+        <i class="fa-solid fa-user"></i>
+        <button class="b login">LogIn</button>
+        <button class="b signup">SignUp</button>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="lb">
+        <ul class="a">
+          <li class="lbl" onclick="dashboard()">Dashboard</li>
+          <li class="lbl" onclick="sub()">Subjects</li>
+          <li class="lbl" onclick="quiz()">Quizzes</li>
+          <li class="lbl" onclick="df()">Discussion Forum</li>
+          <li class="lbl" onclick="pdfs()">PDF Summarizer</li>
+        </ul>
+      </div>
+      <div class="mainbox">
+        <!-- Other sections like subjects and dashboard -->
+
+        <div id="d1">
+          <i class="fa-solid fa-arrow-left" onclick="backq1()"></i>
+          <h1 class="h1basic">Discussion Forum</h1>
+          <div id="discussion-forum">
+            <div id="messages"></div>
+            <input
+              type="text"
+              id="message-input"
+              placeholder="Type your message here..."
+            />
+            <button onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+
+        <div class="bomspace">
+          <div class="bom">
+            <div class="bomfill" id="borefill"></div>
+          </div>
+          <div id="notification"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const messageInput = document.getElementById("message-input");
+        const messagesContainer = document.getElementById("messages");
+        const messageText = messageInput.value.trim();
+
+        if (messageText) {
+          const messageElement = document.createElement("div");
+          messageElement.classList.add("message");
+          messageElement.textContent = messageText;
+
+          messagesContainer.appendChild(messageElement);
+          messageInput.value = ""; // Clear the input
+          messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+        } else {
+          alert("Please enter a message.");
+        }
+      }
+    </script>
+
+    <script src="home.js"></script>
+  </body>
+</html>

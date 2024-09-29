@@ -1,0 +1,440 @@
+body {
+    font-family: cursive;
+}
+
+button {
+    font-family: cursive;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navbar {
+    height: 60px;
+    /* background-color: #FB752C; */
+    background: linear-gradient(63deg, #5e2ea5 2.9%, #442474 102.1%);
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 0px 0px 10px 10px;
+    position: fixed;
+    z-index: 1000;
+}
+
+#logoimg {
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: -8px;
+    left: -10px;
+
+}
+
+#logotxt {
+    width: 120px;
+    height: 105px;
+    position: absolute;
+    top: -20px;
+    left: 60px;
+}
+
+.b {
+    float: right;
+    padding: 8px;
+    width: 100px;
+    border-radius: 5px;
+    border: 0.2px solid #ffffff10;
+    margin: 8px;
+    position: relative;
+    right: 40px;
+    top: -11px;
+    background-color: #ffffff10;
+    color: white;
+    box-shadow: 0px 0px 20px -10px black;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 0;
+    height: 100vh;
+    top: 61px;
+
+}
+
+.lb {
+    margin-left: 0.5px;
+    background-color: #fafafa;
+    width: 250px;
+    height: 1000px;
+    position: fixed;
+    z-index: 0;
+    top: 68px;
+    border-radius: 15px;
+    color: #5e2ea5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.a {
+    position: relative;
+    top: 20px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.lbl {
+    content: "";
+    background: linear-gradient(to right, #5e2ea5 2%, white 1%);
+    box-shadow: 1px 1px 10px -8px black;
+    border-radius: 5px;
+    position: relative;
+    left: 0px;
+    padding: 12px;
+    margin-bottom: 0px;
+    font: 500;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.lbl:hover {
+    background-color: #5e2ea5;
+    background: linear-gradient(to right, #5e2ea5 100%, white 0%);
+
+    color: white;
+}
+
+.fa-user {
+    float: right;
+    color: white !important;
+    font-size: 17px;
+    padding: 8px;
+    margin: 5px;
+    position: relative;
+    right: 20px;
+    top: -7px;
+    font-weight: 100;
+    box-shadow: 0px 0px 10px -5px black;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.mainbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 260px;
+    background-color: #fafafa;
+    width: 1500px;
+    height: 100vh;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 10px;
+    position: fixed;
+}
+
+#q1 {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    overflow: visible;
+    align-content: flex-start;
+    /* display: none; */
+}
+
+.box {
+    display: flex;
+    flex-direction: column !important;
+    flex-wrap: wrap;
+    width: 230px;
+    height: 100px;
+    background-color: #f3f3f3;
+    padding: 30px;
+    color: #5e2ea5;
+    border-radius: 10px;
+    font-weight: 100;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+    box-shadow: 0px 0px 10px 0px rgb(144, 144, 144);
+    border: 2px solid #5e2ea5;
+    cursor: pointer;
+}
+
+.fa-solid {
+    color: #5e2ea5;
+}
+
+.bomspace {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    justify-content: end;
+    
+}
+
+.bom {
+    width: 45px;
+    height: 570px;
+    /* background: linear-gradient(to top, #5e2ea5, #442474); */
+    border: 2px solid white;
+    border-radius: 25px;
+    position: fixed;
+    top: 100px;
+    right: 50px;
+    box-shadow: 0px 0px 2px 0px rgb(144, 144, 144);
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.bomfill {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,#5e2ea5, #442474);
+    bottom: 0;
+    position: absolute;
+    transition: height 1s ease;
+}
+
+#s1 {
+    display: none;
+    color: white;
+}
+
+.fa-arrow-left {
+    padding: 12px 12px 12px 12px;
+    margin-top: 15px;
+    /* background-color: #5e2ea5; */
+    border: 1px solid #5e2ea5;
+    border-radius: 15px;
+    color: #5e2ea5;
+    box-shadow: 0px 0px 20px -10px #00000073;
+    cursor: pointer;
+}
+
+.subname {
+    font-weight: 400;
+    letter-spacing: 1px;
+    
+    position: relative;
+    left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: #5e2ea5; */
+    color: #5e2ea5;
+    border: 1px solid #5e2ea5;
+    width: 800px;
+    padding-left: 30px;
+    margin: 10px 0px 5px 0px;
+    box-shadow: 0px 0px 20px -12px #000000ba;
+}
+
+.sub {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 30px;
+    color: #5e2ea5;
+    width: 820px;
+
+}
+
+.chap {
+    padding: 0px;
+    /* background-color: white; */
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -10px #00000072;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    height: 55px;
+    /* background-color: #5e2ea5; */
+}
+
+.cnum {
+    background-color: #5e2ea5;
+    color: white;
+    margin: 0;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 20px;
+}
+#p1{
+    color: #5e2ea5;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    padding: 0;
+    margin: 0;
+    /* background-color: #442474; */
+    width: 1100px;
+}
+.p2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="file"]{
+    padding: 10px;
+    display: none;
+}
+#h1pdf{
+    letter-spacing: 1px;
+    font: 1000;
+    position: relative;
+    top: -65px;
+    font-size: 40px;
+}
+label{
+    position: relative;
+    top: -40px;
+    color: white;
+    background-color: #5e2ea5;
+    padding: 10px 50px 10px 50px;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.782);
+}
+h3{
+    font-size: 35px;
+    position: relative;
+    top: -20px;
+    align-items: center;
+    
+}
+.summary{
+    position: relative;
+    top: 0px;
+    width: 800px;
+    padding: 0px;
+    border: 2px solid #5e2ea5;
+    border-radius:10px ;
+    background-color: #5e2ea5;
+    box-shadow: 0px 0px 20px -10px black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+summary{
+    padding: 10px;
+    position: relative;
+    top: -40px;
+}
+.ba{
+    left: 400px;
+    padding: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 570px;
+
+}
+.ba button{
+    padding: 5px 10px 5px 10px; 
+    margin: 10px;
+    width: 100px;
+    background:none;
+    border: 2px solid #5e2ea5;
+    border-radius: 5px;
+    /* background-color: #5e2ea5; */
+    color: #5e2ea5;
+    cursor: pointer ;
+    z-index: 1000;
+}
+#b1{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    display: none;
+}
+.h1basic{
+    background-color: #5e2ea5;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: #5e2ea5; */
+    /* color: #5e2ea5; */
+    border: 1px solid #5e2ea5;
+    width: 910px;
+    padding-left: 30px;
+    margin: 10px 0px 5px 0px;
+    box-shadow: 0px 0px 20px -12px #000000ba;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    width: 15px;
+}
+
+.b12{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+
+}
+.v{
+    width: 300px;
+    border: 1px solid #5e2ea5;
+    border-radius: 10px;
+    height: 200px;
+    background-color: #f3f3f3;
+    margin: 10px;
+    box-shadow: 0px 0px 20px -12px #000000ba;
+
+}
+.notification{
+    width: 100vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.56);
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+#d1{
+    display: none;
+    display: flex;
+    flex-direction: column;
+}
+button .summarize{ 
+    background-color: #5e2ea5;
+}
+
+
+
